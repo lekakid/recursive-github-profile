@@ -69,8 +69,8 @@ const getScreenshot = async (username, depth) => {
         console.log("An issue adding files to git occured.");
       }
 
-      console.log("Sleeping 10 seconds while github updates 😊");
-      sleep(10000);
+      console.log("Sleeping 15 seconds while github updates 😊");
+      sleep(15000);
 
       d--;
     }

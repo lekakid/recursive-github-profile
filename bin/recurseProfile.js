@@ -13,6 +13,9 @@ let argv = require("yargs")
   .alias("u", "username")
   .describe("u", "github username")
   .demandOption(["u"])
+  .describe("t", "time delay")
+  .alias("t", "time")
+  .default("t", 10)
   .describe("d", "depth of recursion")
   .alias("d", "depth")
   .default("d", 3)
@@ -43,6 +46,7 @@ const getScreenshot = async (username, depth) => {
 (async () => {
   if (argv.username) {
     let d = argv.depth;
+    let t = argv.time;
 
     while (d > 0) {
       // Take screenshot
@@ -69,8 +73,8 @@ const getScreenshot = async (username, depth) => {
         console.log("An issue adding files to git occured.");
       }
 
-      console.log("Sleeping 15 seconds while github updates 😊");
-      sleep(15000);
+      console.log(`Sleeping ${t} seconds while github updates 😊`);
+      sleep(t * 1000);
 
       d--;
     }

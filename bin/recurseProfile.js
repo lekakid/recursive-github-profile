@@ -36,10 +36,6 @@ const getScreenshot = async (username, depth) => {
     height: 800,
   });
 
-  // this might break pretty quickly
-  await page.tap(
-    "#js-pjax-container > div.container-xl.px-3.px-md-4.px-lg-5 > signup-prompt > div > div > button"
-  );
   await page.screenshot({ path: `screenshot-${depth}.png` });
   await browser.close();
 };
